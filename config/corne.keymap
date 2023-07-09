@@ -11,10 +11,8 @@
 
 #define DEFAULT 0
 #define WASD 1
-#define SOCD_LEFT 2
-#define SOCD_RIGHT 3
-#define FL1 4
-#define FL2 5
+#define FL1 2
+#define FL2 3
 
 / {
         macros {
@@ -65,6 +63,30 @@
                         , <&macro_release &kp D>
                         , <&macro_press &kp A>;
                 };  
+
+                override_left_alt: override_left_alt {
+                    compatible = "zmk,behavior-macro";
+                    label = "ZM_override_left_alt";
+                    #binding-cells = <0>;
+                    wait-ms = <0>;
+                    bindings
+                        = <&macro_press &kp A>
+                        , <&macro_release &kp D>
+                        , <&macro_pause_for_release>
+                        , <&macro_release &kp A>;
+                };
+
+                override_right_alt: override_right_alt {
+                    compatible = "zmk,behavior-macro";
+                    label = "ZM_override_right_alt";
+                    #binding-cells = <0>;
+                    wait-ms = <0>;
+                    bindings
+                        = <&macro_press &kp D>
+                        , <&macro_release &kp A>
+                        , <&macro_pause_for_release>
+                        , <&macro_release &kp D>;
+                };
         };
 
         keymap {
@@ -79,30 +101,12 @@
                         >;
                 };
                 
-                 game_layer {
+                game_layer {
                         bindings = <
    &kp ESC     &kp TAB     &kp Q        &kp W   &kp E          &kp R                  &kp T     &kp J      &kp L   &kp U       &kp Y     &kp SEMI
-   &kp LCTRL   &kp LSHFT   &mo SOCD_LEFT   &kp S   &mo SOCD_RIGHT   &kp F                  &kp G     &kp M      &kp N   &kp E       &kp I     &kp O
+   &kp LCTRL   &kp LSHFT   &override_left_alt   &kp S   &override_right_alt   &kp F                  &kp G     &kp M      &kp N   &kp E       &kp I     &kp O
    &none       &kp LCTRL   &kp Z        &kp X   &kp C          &kp V                  &kp B     &kp K      &kp H   &kp COMMA   &kp DOT   &tog WASD
                                         &kp LGUI   &kp SPACE   &mo FL1                &mo FL2   &kp BSPC   &kp RET
-                        >;
-                };
-
-                socd_left_layer {
-                        bindings = <
-   &kp ESC     &kp TAB     &kp Q   &kp W      &kp E             &kp R                  &kp T     &kp J      &kp L   &kp U       &kp Y     &kp SEMI
-   &kp LCTRL   &kp LSHFT   &kp A   &kp S      &override_right   &kp F                  &kp G     &kp M      &kp N   &kp E       &kp I     &kp O
-   &none       &kp LCTRL   &kp Z   &kp X      &kp C             &kp V                  &kp B     &kp K      &kp H   &kp COMMA   &kp DOT   &tog WASD
-                                   &kp LGUI   &kp SPACE         &mo FL1                &mo FL2   &kp BSPC   &kp RET
-                        >;
-                };
-
-                socd_right_layer {
-                        bindings = <
-   &kp ESC     &kp TAB     &kp Q            &kp W      &kp E       &kp R                  &kp T     &kp J      &kp L   &kp U       &kp Y     &kp SEMI
-   &kp LCTRL   &kp LSHFT   &override_left   &kp S      &kp D       &kp F                  &kp G     &kp M      &kp N   &kp E       &kp I     &kp O
-   &none       &kp LCTRL   &kp Z            &kp X      &kp C       &kp V                  &kp B     &kp K      &kp H   &kp COMMA   &kp DOT   &tog WASD
-                                            &kp LGUI   &kp SPACE   &mo FL1                &mo FL2   &kp BSPC   &kp RET
                         >;
                 };
 
