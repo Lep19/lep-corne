@@ -18,41 +18,49 @@
 
 / {
         macros {
-                ZMK_MACRO(socd_left,
+                socd_left: socd_left {
+                    compatible = "zmk,behavior-macro";
+                    label = "ZM_socd_left";
                     wait-ms = <0>;
                     bindings
                         = <&macro_press &mo SOCD_LEFT &kp A>
                         , <&macro_pause_for_release>
                         , <&macro_release &mo SOCD_LEFT &kp A>;
-                )
+                };
 
-                ZMK_MACRO(socd_right,
+                socd_right: socd_right {
+                    compatible = "zmk,behavior-macro";
+                    label = "ZM_socd_right";
                     wait-ms = <0>;
                     bindings
                         = <&macro_press &mo SOCD_RIGHT &kp D>
                         , <&macro_pause_for_release>
                         , <&macro_release &mo SOCD_RIGHT &kp D>;
-                )
+                };
 
-                ZMK_MACRO(override_left,
+                override_left: override_left {
+                    compatible = "zmk,behavior-macro";
+                    label = "ZM_override_left";
                     wait-ms = <0>;
                     bindings
                         = <&macro_press &kp A>
-                        , <&macro_release &kp D>;
+                        , <&macro_release &kp D>
                         , <&macro_pause_for_release>
-                        , <&macro_release &kp A>;
+                        , <&macro_release &kp A>
                         , <&macro_press &kp D>;
-                )
+                };
 
-                ZMK_MACRO(override_right,
+               override_right: override_right {
+                    compatible = "zmk,behavior-macro";
+                    label = "ZM_override_right";
                     wait-ms = <0>;
                     bindings
                         = <&macro_press &kp D>
-                        , <&macro_release &kp A>;
+                        , <&macro_release &kp A>
                         , <&macro_pause_for_release>
-                        , <&macro_release &kp D>;
+                        , <&macro_release &kp D>
                         , <&macro_press &kp A>;
-                )  
+                };  
         };
 
         keymap {
