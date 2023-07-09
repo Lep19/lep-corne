@@ -21,6 +21,7 @@
                 socd_left: socd_left {
                     compatible = "zmk,behavior-macro";
                     label = "ZM_socd_left";
+                    #binding-cells = <0>;
                     wait-ms = <0>;
                     bindings
                         = <&macro_press &mo SOCD_LEFT &kp A>
@@ -31,6 +32,7 @@
                 socd_right: socd_right {
                     compatible = "zmk,behavior-macro";
                     label = "ZM_socd_right";
+                    #binding-cells = <0>;
                     wait-ms = <0>;
                     bindings
                         = <&macro_press &mo SOCD_RIGHT &kp D>
@@ -41,6 +43,7 @@
                 override_left: override_left {
                     compatible = "zmk,behavior-macro";
                     label = "ZM_override_left";
+                    #binding-cells = <0>;
                     wait-ms = <0>;
                     bindings
                         = <&macro_press &kp A>
@@ -53,6 +56,7 @@
                override_right: override_right {
                     compatible = "zmk,behavior-macro";
                     label = "ZM_override_right";
+                    #binding-cells = <0>;
                     wait-ms = <0>;
                     bindings
                         = <&macro_press &kp D>
