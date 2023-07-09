@@ -26,7 +26,8 @@
                         = <&macro_press &kp A>
                         , <&macro_release &kp D>
                         , <&macro_pause_for_release>
-                        , <&macro_release &kp A>;
+                        , <&macro_release &kp A>
+                        , <&macro_press &kp D>;
                 };
 
                 override_right: override_right {
@@ -38,7 +39,8 @@
                         = <&macro_press &kp D>
                         , <&macro_release &kp A>
                         , <&macro_pause_for_release>
-                        , <&macro_release &kp D>;
+                        , <&macro_release &kp D>
+                        , <&macro_press &kp A>;
                 };
         };
 
