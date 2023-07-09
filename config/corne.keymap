@@ -17,42 +17,43 @@
 #define FL2 5
 
 / {
+        macros {
+                ZMK_MACRO(socd_left,
+                    wait-ms = <0>;
+                    bindings
+                        = <&macro_press &mo SOCD_LEFT &kp A>
+                        , <&macro_pause_for_release>
+                        , <&macro_release &mo SOCD_LEFT &kp A>;
+                )
 
-        ZMK_MACRO(socd_left,
-            wait-ms = <0>;
-            bindings
-                = <&macro_press &mo SOCD_LEFT &kp A>
-                , <&macro_pause_for_release>
-                , <&macro_release &mo SOCD_LEFT &kp A>;
-        )
+                ZMK_MACRO(socd_right,
+                    wait-ms = <0>;
+                    bindings
+                        = <&macro_press &mo SOCD_RIGHT &kp D>
+                        , <&macro_pause_for_release>
+                        , <&macro_release &mo SOCD_RIGHT &kp D>;
+                )
 
-        ZMK_MACRO(socd_right,
-            wait-ms = <0>;
-            bindings
-                = <&macro_press &mo SOCD_RIGHT &kp D>
-                , <&macro_pause_for_release>
-                , <&macro_release &mo SOCD_RIGHT &kp D>;
-        )
+                ZMK_MACRO(override_left,
+                    wait-ms = <0>;
+                    bindings
+                        = <&macro_press &kp A>
+                        , <&macro_release &kp D>;
+                        , <&macro_pause_for_release>
+                        , <&macro_release &kp A>;
+                        , <&macro_press &kp D>;
+                )
 
-        ZMK_MACRO(override_left,
-            wait-ms = <0>;
-            bindings
-                = <&macro_press &kp A>
-                , <&macro_release &kp D>;
-                , <&macro_pause_for_release>
-                , <&macro_release &kp A>;
-                , <&macro_press &kp D>;
-        )
-
-        ZMK_MACRO(override_right,
-            wait-ms = <0>;
-            bindings
-                = <&macro_press &kp D>
-                , <&macro_release &kp A>;
-                , <&macro_pause_for_release>
-                , <&macro_release &kp D>;
-                , <&macro_press &kp A>;
-        )  
+                ZMK_MACRO(override_right,
+                    wait-ms = <0>;
+                    bindings
+                        = <&macro_press &kp D>
+                        , <&macro_release &kp A>;
+                        , <&macro_pause_for_release>
+                        , <&macro_release &kp D>;
+                        , <&macro_press &kp A>;
+                )  
+        };
 
         keymap {
                 compatible = "zmk,keymap";
