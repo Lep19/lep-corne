@@ -16,27 +16,6 @@
 
 / {
         macros {
-                socd_left: socd_left {
-                    compatible = "zmk,behavior-macro";
-                    label = "ZM_socd_left";
-                    #binding-cells = <0>;
-                    wait-ms = <0>;
-                    bindings
-                        = <&macro_press &mo SOCD_LEFT &kp A>
-                        , <&macro_pause_for_release>
-                        , <&macro_release &mo SOCD_LEFT &kp A>;
-                };
-
-                socd_right: socd_right {
-                    compatible = "zmk,behavior-macro";
-                    label = "ZM_socd_right";
-                    #binding-cells = <0>;
-                    wait-ms = <0>;
-                    bindings
-                        = <&macro_press &mo SOCD_RIGHT &kp D>
-                        , <&macro_pause_for_release>
-                        , <&macro_release &mo SOCD_RIGHT &kp D>;
-                };
 
                 override_left: override_left {
                     compatible = "zmk,behavior-macro";
@@ -47,38 +26,12 @@
                         = <&macro_press &kp A>
                         , <&macro_release &kp D>
                         , <&macro_pause_for_release>
-                        , <&macro_release &kp A>
-                        , <&macro_press &kp D>;
-                };
-
-               override_right: override_right {
-                    compatible = "zmk,behavior-macro";
-                    label = "ZM_override_right";
-                    #binding-cells = <0>;
-                    wait-ms = <0>;
-                    bindings
-                        = <&macro_press &kp D>
-                        , <&macro_release &kp A>
-                        , <&macro_pause_for_release>
-                        , <&macro_release &kp D>
-                        , <&macro_press &kp A>;
-                };  
-
-                override_left_alt: override_left_alt {
-                    compatible = "zmk,behavior-macro";
-                    label = "ZM_override_left_alt";
-                    #binding-cells = <0>;
-                    wait-ms = <0>;
-                    bindings
-                        = <&macro_press &kp A>
-                        , <&macro_release &kp D>
-                        , <&macro_pause_for_release>
                         , <&macro_release &kp A>;
                 };
 
-                override_right_alt: override_right_alt {
+                override_right: override_right {
                     compatible = "zmk,behavior-macro";
-                    label = "ZM_override_right_alt";
+                    label = "ZM_override_right";
                     #binding-cells = <0>;
                     wait-ms = <0>;
                     bindings
@@ -104,7 +57,7 @@
                 game_layer {
                         bindings = <
    &kp ESC     &kp TAB     &kp Q        &kp W   &kp E          &kp R                  &kp T     &kp J      &kp L   &kp U       &kp Y     &kp SEMI
-   &kp LCTRL   &kp LSHFT   &override_left_alt   &kp S   &override_right_alt   &kp F                  &kp G     &kp M      &kp N   &kp E       &kp I     &kp O
+   &kp LCTRL   &kp LSHFT   &override_left   &kp S   &override_right   &kp F                  &kp G     &kp M      &kp N   &kp E       &kp I     &kp O
    &none       &kp LCTRL   &kp Z        &kp X   &kp C          &kp V                  &kp B     &kp K      &kp H   &kp COMMA   &kp DOT   &tog WASD
                                         &kp LGUI   &kp SPACE   &mo FL1                &mo FL2   &kp BSPC   &kp RET
                         >;
